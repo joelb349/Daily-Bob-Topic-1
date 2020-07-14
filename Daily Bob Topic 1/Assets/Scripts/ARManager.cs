@@ -21,7 +21,7 @@ public class ARManager : MonoBehaviour
     public GameObject asset;
     public GameObject placementIndicator;
     public ModelDialog dialog;
-    public Canvas canvasI;
+    public GameObject canvasI;
 
     public List<ARRaycastHit> raycastHits = new List<ARRaycastHit>();
 
@@ -33,8 +33,7 @@ public class ARManager : MonoBehaviour
     private void Start()
     {
         state = State.FindingGround;
-
-
+        canvasI.SetActive(false);
     }
 
     private void Update()
@@ -91,6 +90,7 @@ public class ARManager : MonoBehaviour
             bool collision = Physics.Raycast(ray, out raycastHit, 10, layerMask);
             if (collision)
             {
+                canvasI.SetActive(true);
                 dialog.Set("There are 421 ways of saying the word snow in Scotland!");
             }
         }

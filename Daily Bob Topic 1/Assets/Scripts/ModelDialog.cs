@@ -13,6 +13,12 @@ public class ModelDialog : MonoBehaviour
     [HideInInspector]
     public bool isVisible = true;
 
+    private void Start()
+    {
+        text1.enabled = false;
+        text2.enabled = false;
+    }
+
 
     public void SetVisibility(bool pIsVisible)
     {
@@ -24,6 +30,7 @@ public class ModelDialog : MonoBehaviour
     {
         SetVisibility(true);
         text2.enabled = false;
+        text1.enabled = true;
         text1.text = pMessage;
     }
 
