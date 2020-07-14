@@ -82,7 +82,7 @@ public class ARManager : MonoBehaviour
 
     private void RayCastPickMesh()
     {
-        if (Input.GetMouseButton(0) && dialog.isVisible)
+        if (Input.GetMouseButton(0))
         {
             RaycastHit raycastHit;
             LayerMask layerMask = LayerMask.GetMask(new string[] { "3D Model" });
